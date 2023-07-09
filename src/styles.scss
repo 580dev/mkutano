@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+$primary-color: #2ea541;
+$primary-color-hover: #248033c7;
+$color-top-footer: #1d4a48;
+$color-bottom-footer: #000504;
+$text-color-primary: #11572d;
+$title-color: #173433;
+$secondary-color: #cd2c09;
+
+.active {
+    font-weight: bold;
+    color: yellow;
+}
