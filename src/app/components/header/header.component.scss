@@ -3,3 +3,19 @@
 .activate-link {
     color: $primary-color!important;
 }
+
+.header-navigation .main-menu li.active-menu > a {
+    color: $primary-color;
+  }
+  
+  .header-navigation .main-menu li.active-menu > a::after {
+    color: $primary-color;
+  }
+  
+  .header-navigation .main-menu li:hover > a {
+    color: $primary-color;
+  }
+  
+  .header-navigation .main-menu li:hover > a::after {
+    color: $primary-color;
+  }

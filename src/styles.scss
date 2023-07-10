@@ -11,3 +11,9 @@ $secondary-color: #cd2c09;
     font-weight: bold;
     color: yellow;
 }
+
+.btn-primary {
+    background-color: $primary-color;
+    border-color: $primary-color;
+    color: #000504;
+}
