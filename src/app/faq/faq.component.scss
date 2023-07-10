@@ -1,0 +1,9 @@
+@import  '../../styles.scss';
+
+.page-banner-section::before {
+    background-color: $primary-color-hover!important;
+}
+
+.faq-accordion .accordion-item .accordion-header .accordion-button .faq-button {
+    color: $title-color;
+}

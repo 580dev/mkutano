@@ -8,6 +8,10 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
+import { FaqComponent } from './faq/faq.component';
+import { ContactComponent } from './contact/contact.component';
+import { BannerComponent } from './components/banner/banner.component';
+import { HackathonComponent } from './hackathon/hackathon.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +19,11 @@ import { RouterModule } from '@angular/router';
     HeaderComponent,
     FooterComponent,
     AboutComponent,
-    HomeComponent
+    HomeComponent,
+    FaqComponent,
+    ContactComponent,
+    BannerComponent,
+    HackathonComponent
   ],
   imports: [
     BrowserModule,

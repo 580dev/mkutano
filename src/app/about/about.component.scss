@@ -1,0 +1,17 @@
+@import  '../../styles.scss';
+
+.page-banner-section::before {
+    background-color: $primary-color-hover!important;
+}
+
+.meeta-features-section .shape-1 {
+    border: 30px solid $primary-color!important;
+}
+
+.meeta-event-sponsors-2 {
+    background-color: $primary-color!important;
+}
+
+.meeta-section-title-2 .sub-title {
+    color: $text-color-primary;
+}
