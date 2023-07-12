@@ -6,8 +6,15 @@ $color-bottom-footer: #000504;
 $text-color-primary: #11572d;
 $title-color: #173433;
 $secondary-color: #cd2c09;
+$blue-banner: rgba(19, 19, 141, 0.5);
 
 .active {
     font-weight: bold;
     color: yellow;
+}
+
+.btn-primary {
+    background-color: $primary-color;
+    border-color: $primary-color;
+    color: #000504;
 }

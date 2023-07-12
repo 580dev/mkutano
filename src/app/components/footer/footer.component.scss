@@ -1,0 +1,9 @@
+@import  '../../../styles.scss';
+
+.meeta-footer-section {
+    background-color: $color-bottom-footer !important;
+}
+
+.meeta-footer-2 .footer-copyright {
+    border-top: 3px solid $primary-color;
+}

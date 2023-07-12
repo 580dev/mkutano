@@ -1,0 +1,22 @@
+@import '../../styles.scss';
+
+.meeta-hero-section-2 {
+    &::before {
+        background-image: linear-gradient(-87deg, #008856 0%, #008855 47%, rgba(0, 136, 85, 0.99) 48%, rgba(0, 190, 80, 0.61176) 100%) !important;
+    }
+}
+
+.meeta-hero-section-6 .meeta-hero-content .title span {
+    color: $primary-color;
+}
+
+.meeta-hero-section-6::before {
+    background: none;
+}
+
+.btn-2 {
+    background-color: $primary-color;
+    &:hover {
+        color: $primary-color;
+    }
+}
