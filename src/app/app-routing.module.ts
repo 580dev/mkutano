@@ -10,7 +10,6 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'about', component: AboutComponent},
   {path: 'faq', component: FaqComponent},
-  {path: 'contact', component: ContactComponent},
   {path: 'hackathon', component: HackathonComponent},
   { path: '**', redirectTo: 'home' },
 ];

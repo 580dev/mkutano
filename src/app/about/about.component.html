@@ -118,152 +118,30 @@
         <!-- About Section Start -->
         <div class="meeta-about-section section-padding">
             <div class="container">
-
-                <div class="row gy-5 align-items-center">
-                    <div class="col-lg-7">
-
-                        <!-- About Images Start -->
-                        <div class="meeta-about-images" style="background-image: url(assets/images/shape/shape-4.png);">
-                            <div class="image">
-                                <img src="assets/images/about.jpg" alt="About">
+                <div class="row">
+                    <div *ngFor="let person of persons" class="col-lg-4 col-sm-6">
+                        <!-- Event List Item Start -->
+                        <div class="event-list-item">
+                            <div class="event-img"><img [src]="person.photo ?? 'assets/images/event/event-list-1.jpg'" alt="">
+                            </div>
+                            <div class="event-list-content">
+                                <div class="event-price">
+                                    <span class="cat">{{person.title}}</span>
+                                </div>
+                                <h3 class="title"> {{person.name}} </h3>
+                                <!-- <div class="meta-data">
+                                    <span><i class="fas fa-map-marker-alt"></i> 1:00AM-2:00AM</span>
+                                    <span><i class="fas fa-map-marker-alt"></i>    Sand diego, Canada</span>
+                                </div> -->
+                                <div class="event-desc">
+                                    <p>{{person.description}}</p>
+                                </div>
                             </div>
                         </div>
-                        <!-- About Images End -->
-
+                        <!-- Event List Item End -->
                     </div>
-                    <div class="col-lg-5">
-
-                        <!-- Section Title Start -->
-                        <div class="meeta-section-title-2 meeta-about-title">
-                            <h4 class="sub-title">An event for</h4>
-                            <h2 class="main-title">Designers, Web <br> developers & Design</h2>
-                        </div>
-                        <!-- Section Title End -->
-
-                        <!-- About Content Start -->
-                        <div class="meeta-about-content">
-
-                            <p>We’re inviting the top creatives in the tech industry from all over the world to come learn, grow, scrape their knees, try new things, to be vulnerable, and to have epic adventures</p>
-                            <p>We’re inviting the top creatives in the tech industry from all over the world to come learn, grow, scrape their knees, try new things, to be vulnerable, and to have epic adventures together, this time both in-person</p>
-
-                        </div>
-                        <!-- About Content End -->
-
-                    </div>
+                    
                 </div>
-
             </div>
         </div>
         <!-- About Section End -->
-
-        <!-- Features Section Start -->
-        <div class="meeta-features-section section-padding">
-            <div class="shape-1" data-aos-delay="700" data-aos="zoom-in"></div>
-            <img class="shape-2" src="assets/images/shape/shape-11.png" alt="">
-            <div class="container">
-                <div class="meeta-features-wrap">
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <!-- Section Title Start -->
-                            <div class="meeta-section-title-2">
-                                <h4 class="sub-title">Reason to join conference</h4>
-                                <h2 class="main-title">Why attend conference</h2>
-                            </div>
-                            <!-- Section Title End -->
-                            <!-- Features Item Start -->
-                            <div class="feature-item feature-1">
-                                <div class="feature-icon">
-                                    <img src="assets/images/feature-icon-1.png" alt="">
-                                </div>
-                                <div class="feature-content">
-                                    <h3 class="title"><a href="#">Trainings & Awards</a></h3>
-                                    <p>We’re inviting the top creatives in the tech industry from all over the world to come learn, grow, scrape their </p>
-                                </div>
-                            </div>
-                            <!-- Features Item End -->
-                        </div>
-                        <div class="col-lg-4">
-                            <!-- Features Item Start -->
-                            <div class="feature-item feature-2">
-                                <div class="feature-icon">
-                                    <img src="assets/images/feature-icon-2.png" alt="">
-                                </div>
-                                <div class="feature-content">
-                                    <h3 class="title"><a href="#">World Class Speaker</a></h3>
-                                    <p>We’re inviting the top creatives in the tech industry from all over the world to come learn, grow, scrape their </p>
-                                </div>
-                            </div>
-                            <!-- Features Item End -->
-                            <!-- Features Item Start -->
-                            <div class="feature-item feature-3">
-                                <div class="feature-icon">
-                                    <img src="assets/images/feature-icon-3.png" alt="">
-                                </div>
-                                <div class="feature-content">
-                                    <h3 class="title"><a href="#">Evening Concert</a></h3>
-                                    <p>We’re inviting the top creatives in the tech industry from all over the world to come learn, grow, scrape their </p>
-                                </div>
-                            </div>
-                            <!-- Features Item End -->
-                        </div>
-                        <div class="col-lg-4">
-                            <!-- Features Item Start -->
-                            <div class="feature-item feature-4">
-                                <div class="feature-icon">
-                                    <img src="assets/images/feature-icon-4.png" alt="">
-                                </div>
-                                <div class="feature-content">
-                                    <h3 class="title"><a href="#">3 Days Conference</a></h3>
-                                    <p>We’re inviting the top creatives in the tech industry from all over the world to come learn, grow, scrape their </p>
-                                </div>
-                            </div>
-                            <!-- Features Item End -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Features Section End -->
-
-        <!-- Event Sponsors Start -->
-        <div class="meeta-event-sponsors-2 section-padding">
-            <div class="container">
-
-                <!-- Section Title Start -->
-                <div class="meeta-section-title-2 text-center">
-                    <h2 class="main-title">Event Sponsors</h2>
-                </div>
-                <!-- Section Title End -->
-
-                <!-- Sponsor Active Start -->
-                <div class="meeta-sponsor-active">
-                    <div class="swiper">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="meeta-sponsor-logo">
-                                    <img src="assets/images/sponsors-5.png" alt="">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="meeta-sponsor-logo">
-                                    <img src="assets/images/sponsors-6.png" alt="">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="meeta-sponsor-logo">
-                                    <img src="assets/images/sponsors-7.png" alt="">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="meeta-sponsor-logo">
-                                    <img src="assets/images/sponsors-8.png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Sponsor Active End -->
-
-            </div>
-        </div>
-        <!-- Event Sponsors End -->
