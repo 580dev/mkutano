@@ -27,6 +27,7 @@ export class AboutComponent {
       photo: "assets/images/about/steve.png"
     },
     {
+      photo: "assets/images/about/tidiane.png",
       name: "Lionel Rolland",
       title: "Software engenier",
       description: "Managing a popular open source project can be daunting at first. How do we maintain all these issues, or automatically trigger enim ad minim veniam, quis nostrud exercitation ullamco laboris"
