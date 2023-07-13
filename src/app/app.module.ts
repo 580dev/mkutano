@@ -12,6 +12,7 @@ import { FaqComponent } from './faq/faq.component';
 import { ContactComponent } from './contact/contact.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { HackathonComponent } from './hackathon/hackathon.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HackathonComponent } from './hackathon/hackathon.component';
     FaqComponent,
     ContactComponent,
     BannerComponent,
-    HackathonComponent
+    HackathonComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
