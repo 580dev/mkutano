@@ -31,6 +31,16 @@ export class AboutComponent {
       name: "Lionel Rolland",
       title: "Software engenier",
       description: "Managing a popular open source project can be daunting at first. How do we maintain all these issues, or automatically trigger enim ad minim veniam, quis nostrud exercitation ullamco laboris"
+    },
+    {
+      name: "Ayoub Alouane",
+      title: "Software engenier",
+      description: "Managing a popular open source project can be daunting at first. How do we maintain all these issues, or automatically trigger enim ad minim veniam, quis nostrud exercitation ullamco laboris",
+    },
+    {
+      name: "Ricardo Kono",
+      title: "Software engenier",
+      description: "Managing a popular open source project can be daunting at first. How do we maintain all these issues, or automatically trigger enim ad minim veniam, quis nostrud exercitation ullamco laboris"
     }
   ]
 }
