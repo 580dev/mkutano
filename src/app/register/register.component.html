@@ -80,44 +80,14 @@
 
   <!-- Offcanvas Body Start -->
   <div class="offcanvas-body">
-    <div class="offcanvas-menu offcanvas-menu-2">
+    <div class="offcanvas-menu">
       <ul class="main-menu">
-        <li>
-          <a href="#">Home</a>
-          <ul class="sub-menu">
-            <li><a href="index.html">Home 01</a></li>
-            <li><a href="index-2.html">Home 02</a></li>
-            <li><a href="index-3.html">Home 03</a></li>
-            <li><a href="index-4.html">Home 04</a></li>
-            <li><a href="index-5.html">Home 05</a></li>
-            <li><a href="index-6.html">Home 06</a></li>
-          </ul>
-        </li>
-        <li><a href="about.html">About</a></li>
         <li class="active-menu">
-          <a href="#">Pages</a>
-          <ul class="sub-menu">
-            <li><a href="event-list.html">Event List</a></li>
-            <li><a href="event-single.html">Event Single</a></li>
-            <li><a href="schedule.html">Event Schedule</a></li>
-            <li><a href="speaker-one.html">Speakers 01</a></li>
-            <li><a href="speaker-two.html">Speakers 02</a></li>
-            <li><a href="speaker-single.html">Speaker Single</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="price.html">Pricing</a></li>
-            <li><a class="active" href="faq.html">FAQ's</a></li>
-            <li><a href="login-register.html">Login Register</a></li>
-          </ul>
+          <a href="/home" routerLinkActive="activate-link">Home</a>
         </li>
-        <li>
-          <a href="#">Blog</a>
-          <ul class="sub-menu">
-            <li><a href="blog.html">Blog Grid</a></li>
-            <li><a href="blog-standard.html">Latest News</a></li>
-            <li><a href="blog-details.html">Blog Details</a></li>
-          </ul>
-        </li>
-        <li><a href="contact.html">Contact</a></li>
+        <li class="active-menu"><a href="/about" routerLinkActive="activate-link">About</a></li>
+        <li class="active-menu"><a href="/hackathon"  routerLinkActive="activate-link">Hackathon</a></li>
+        <li class="active-menu"><a href="/faq" routerLinkActive="activate-link">FAQ</a></li>
       </ul>
     </div>
   </div>
@@ -145,15 +115,20 @@
             <!-- Section Title End -->
 
             <div class="login-register-form">
-              <form action="#">
-                <div class="single-form">
+              <p class=" alert-danger">{{errorUpload}}</p>
+              <h3 *ngIf="isSubmitSuccess">Thank you for enrolling in MKUTANO IT 2023. We will contact you very soon
+                for the rest of the modalities </h3>
+              <form [formGroup]="registerForm" (ngSubmit)="onSubmitRegisterForm()">
+                 <div class="single-form">
                   <div class="form-check form-check-inline">
                     <input
                       class="form-check-input"
                       type="radio"
-                      name="inlineRadioOptions"
+                      name="profilType"
+                      formControlName="profilType"
                       id="typeStudent"
                       value="STUDENT"
+                      (change)="profilChange($event)"
                     />
                     <label class="form-check-label" for="typeStudent"
                       >Student</label
@@ -163,9 +138,11 @@
                     <input
                       class="form-check-input"
                       type="radio"
-                      name="inlineRadioOptions"
+                      name="profilType"
+                      formControlName="profilType"
                       id="typeWorker"
                       value="WORKER"
+                      (change)="profilChange($event)"
                     />
                     <label class="form-check-label" for="typeWorker"
                       >Worker / Employee / Entrepreneur</label
@@ -175,74 +152,127 @@
                     <input
                       class="form-check-input"
                       type="radio"
-                      name="inlineRadioOptions"
+                      name="profilType"
+                      formControlName="profilType"
                       id="typeCompany"
                       value="COMPANY"
+                      (change)="profilChange($event)"
                     />
                     <label class="form-check-label" for="typeCompany">
-                      Startup / Company</label
-                    >
+                      Startup / Company
+                    </label>
                   </div>
                 </div>
-                <div class="single-form">
+                <div class="single-form" *ngIf="isStartup ||isWorker || isStudent">
                   <input
                     type="text"
                     class="form-control"
-                    placeholder="Firstname "
+                    formControlName="firstName"
+                    placeholder="Firstname *"
                   />
                 </div>
-                <div class="single-form">
+                <div class="single-form" *ngIf="isStartup ||isWorker || isStudent">
                   <input
                     type="text"
                     class="form-control"
-                    placeholder="Lastname"
+                    formControlName="lastName"
+                    placeholder="Lastname *"
                   />
                 </div>
-                <div class="single-form">
+                <div class="single-form" *ngIf="isStartup ||isWorker || isStudent">
                   <input
                     type="text"
                     class="form-control"
-                    placeholder="School"
+                    formControlName="phoneNumber"
+                    placeholder="Phone Number *"
                   />
                 </div>
-                <div class="single-form">
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Phone Number"
-                  />
-                </div>
-                <div class="single-form">
-                  <input type="text" class="form-control" placeholder="Email" />
+                <div class="single-form" *ngIf="isStartup ||isWorker || isStudent">
+                  <input type="text" class="form-control" formControlName="mail" placeholder="Email *" />
                 </div>
                 <div class="single-form">
                   <input
                     type="text"
                     class="form-control"
-                    placeholder="Country"
+                    formControlName="country"
+                    placeholder="Country *"
                   />
                 </div>
-                <div class="single-form">
+                <!-- student -->
+                <div class="single-form" *ngIf="isStudent">
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="school"
+                    placeholder="School *"
+                  />
+                </div>
+                <!-- Work -->
+                <div class="single-form" *ngIf="isWorker">
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="profession"
+                    placeholder="Profession *"
+                  />
+                </div>
+                <div class="single-form" *ngIf="isWorker">
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="nbreYearExp"
+                    placeholder="Number of years of experience *"
+                  />
+                </div>
+                <!-- startup -->
+                <div class="single-form" *ngIf="isStartup">
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="nameOfStartup"
+                    placeholder="Name of your startup *"
+                  />
+                </div>
+                <div class="single-form" *ngIf="isStartup">
+                  <input
+                    type="text"
+                    class="form-control ng-valid"
+                    formControlName="numberOfEmp"
+                    placeholder="Number of employees *"
+                  />
+                </div>
+                <div class="single-form" *ngIf="isStartup">
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="coreBuss"
+                    placeholder="core business *"
+                  />
+                </div>
+                <div class="single-form" *ngIf="isStartup ||isWorker || isStudent">
                   <div>
                     <label for="formFile" class="form-label"
-                      >Upload Resume</label
+                      >Upload Resume (only PDF) *</label
                     >
-                    <input class="form-control" type="file" id="formFile" />
+                    <input class="form-control" type="file" (change)="onDetectFile($event)" accept="application/pdf"
+                           id="formFile" />
                   </div>
                 </div>
-                <div class="single-form form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value=""
-                    id="flexCheckDefault"
-                  />
-                  <label class="form-check-label" for="flexCheckDefault"
-                    >I agree to the terms and conditions.</label
-                  >
-                </div>
+<!--                <div class="single-form form-check">-->
+<!--                  <input-->
+<!--                    class="form-check-input"-->
+<!--                    type="checkbox"-->
+<!--                    value=""-->
+<!--                    id="flexCheckDefault"-->
+<!--                  />-->
+<!--                  <label class="form-check-label" for="flexCheckDefault"-->
+<!--                    >I agree to the terms and conditions.</label-->
+<!--                  >-->
+<!--                </div>-->
                 <div class="form-btn">
-                  <button class="btn-2">Login</button>
+                  <p>Fields marked with an asterisk (*) are obligatory</p>
+                  <button class="btn-2" type="submit" [disabled]="(registerForm.invalid || !imgAlreadyLoad)">
+                    Submit</button>
                 </div>
               </form>
             </div>

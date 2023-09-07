@@ -13,6 +13,7 @@ import { ContactComponent } from './contact/contact.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { HackathonComponent } from './hackathon/hackathon.component';
 import { RegisterComponent } from './register/register.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { RegisterComponent } from './register/register.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule, FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
